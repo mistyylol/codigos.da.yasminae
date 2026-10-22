@@ -9,21 +9,154 @@ html {
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #f3eff7;
-    color: #30283a;
+    background-color: #f2eadf;
+    color: #3e3329;
     line-height: 1.7;
 }
 
 header {
     text-align: center;
     padding: 35px 20px;
-    color: white;
-    background: linear-gradient(135deg, #38234f, #8869a8);
+    color: #fff8ed;
+    background: linear-gradient(135deg, #574333, #92775b);
 }
 
 header h1 {
     margin: 0;
-    font-size: 2.6rem;{
+    font-size: 2.6rem;
+}
+
+.dica {
+    font-size: 0.95rem;
+}
+
+main {
+    width: 90%;
+    max-width: 900px;
+    margin: 30px auto;
+}
+
+.especie {
+    background: #fffaf2;
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 16px;
+    box-shadow: 0 5px 18px rgba(62, 51, 41, 0.10);
+}
+
+.especie h2 {
+    color: #79583e;
+    margin-top: 0;
+}
+
+.especie h3 {
+    color: #826747;
+    margin-bottom: 5px;
+}
+
+/* CARTÃO INTERATIVO */
+
+.cartao {
+    position: relative;
+    width: 100%;
+    max-width: 520px;
+    height: 320px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 14px;
+    background: #574333;
+}
+
+/* Remove o marcador padrão do details */
+
+.cartao summary {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    cursor: pointer;
+}
+
+.cartao summary::-webkit-details-marker {
+    display: none;
+}
+
+.cartao summary img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 8px;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+/* Texto de orientação sobre a imagem */
+
+.indicacao {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    width: max-content;
+    max-width: 90%;
+    transform: translateX(-50%);
+    padding: 7px 12px;
+    border-radius: 20px;
+    color: #fffaf2;
+    background: rgba(62, 51, 41, 0.88);
+    font-size: 0.82rem;
+    text-align: center;
+}
+
+/* Camada da curiosidade */
+
+.curiosidade {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow-y: auto;
+    padding: 25px;
+    color: #fffaf2;
+    background: rgba(62, 51, 41, 0.96);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+
+    transition:
+        opacity 0.35s ease,
+        transform 0.35s ease,
+        visibility 0.35s ease;
+
+    pointer-events: none;
+}
+
+.curiosidade h3 {
+    color: #dfc49e;
+    font-size: 1.35rem;
+    margin-top: 0;
+}
+
+/* Interação ao passar o mouse */
+
+@media (hover: hover) {
+    .cartao:hover .curiosidade {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .cartao:hover summary img {
+        transform: scale(1.08);
+        opacity: 0.3;
+    }
+
+    .cartao:hover .indicacao {
+        opacity: 0;
+    }
+}
 
 /* Interação por toque e clique */
 
@@ -45,27 +178,31 @@ header h1 {
 /* Foco acessível pelo teclado */
 
 .cartao summary:focus-visible {
-    outline: 4px solid #c69cf0;
+    outline: 4px solid #b79a70;
     outline-offset: -4px;
 }
+
+/* Rodapé */
 
 footer {
     text-align: center;
     padding: 25px;
-    background: #30213f;
-    color: white;
+    background: #3e3329;
+    color: #fffaf2;
 }
 
 footer a {
     display: inline-block;
     margin: 5px 10px;
-    color: #ead8ff;
+    color: #e4cfad;
     text-decoration: none;
 }
 
 footer a:hover {
     text-decoration: underline;
 }
+
+/* Ajustes para celulares */
 
 @media (max-width: 600px) {
     header h1 {
@@ -90,223 +227,7 @@ footer a:hover {
     }
 }
 
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        scroll-behavior: auto !important;
-        transition: none !important;
-    }
-}
-
-}
-
-.dica {
-    font-size: 0.95rem;
-}
-
-main {
-    width: 90%;
-    max-width: 900px;
-    margin: 30px auto;
-}
-
-.especie {
-    background: white;
-    padding: 25px;
-    margin-bottom: 30px;
-    border-radius: 16px;
-    box-shadow: 0 5px 18px rgba(45, 27, 61, 0.10);
-}
-
-.especie h2 {
-    color: #704b91;
-    margin-top: 0;
-}
-
-.especie h3 {
-    color: #765493;
-    margin-bottom: 5px;
-}
-
-/* CARTÃO INTERATIVO: TAMANHO IGUAL PARA TODAS AS IMAGENS */
-
-.cartao {
-    position: relative;
-    width: 100%;
-    max-width: 520px;
-    height: 320px;
-    margin: 20px auto;
-    overflow: hidden;
-    border-radius: 14px;
-    background: #30213f;
-}
-
-/* Área clicável da imagem */
-
-.cartao summary {
-    position: relative;
-    display: block;
-    width: 100%;
-    height: 100%;
-    list-style: none;
-    cursor: pointer;
-}
-
-.cartao summary::-webkit-details-marker {
-    display: none;
-}
-
-/* Todas as imagens ocupam a mesma área */
-
-.cartao summary img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    padding: 8px;
-    transition: transform 0.4s ease, opacity 0.4s ease;
-}
-
-/* TEXTO DE ORIENTAÇÃO SOBRE A IMAGEM */
-
-.indicacao {
-    position: absolute;
-    bottom: 12px;
-    left: 50%;
-    width: max-content;
-    max-width: 90%;
-    transform: translateX(-50%);
-    padding: 7px 12px;
-    border-radius: 20px;
-    color: white;
-    background: rgba(48, 33, 63, 0.85);
-    font-size: 0.82rem;
-    text-align: center;
-    transition: opacity 0.3s ease;
-}
-
-/* CAMADA DA CURIOSIDADE */
-
-.curiosidade {
-    position: absolute;
-    inset: 0;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    overflow-y: auto;
-    padding: 25px;
-    color: white;
-    background: rgba(48, 33, 63, 0.96);
-
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(15px);
-
-    transition:
-        opacity 0.35s ease,
-        transform 0.35s ease,
-        visibility 0.35s ease;
-
-    pointer-events: none;
-}
-
-.curiosidade h3 {
-    color: #e7caff;
-    font-size: 1.35rem;
-    margin-top: 0;
-}
-
-/* INTERAÇÃO AO PASSAR O MOUSE */
-
-@media (hover: hover) {
-    .cartao:hover .curiosidade {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-    }
-
-    .cartao:hover summary img {
-        transform: scale(1.05);
-        opacity: 0.3;
-    }
-
-    .cartao:hover .indicacao {
-        opacity: 0;
-    }
-}
-
-/* INTERAÇÃO POR TOQUE E CLIQUE */
-
-.cartao[open] .curiosidade {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-    pointer-events: auto;
-}
-
-.cartao[open] summary img {
-    opacity: 0.25;
-}
-
-.cartao[open] .indicacao {
-    opacity: 0;
-}
-
-/* ACESSIBILIDADE PELO TECLADO */
-
-.cartao summary:focus-visible {
-    outline: 4px solid #c69cf0;
-    outline-offset: -4px;
-}
-
-/* RODAPÉ */
-
-footer {
-    text-align: center;
-    padding: 25px;
-    background: #30213f;
-    color: white;
-}
-
-footer a {
-    display: inline-block;
-    margin: 5px 10px;
-    color: #ead8ff;
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
-
-/* ADAPTAÇÃO PARA CELULARES */
-
-@media (max-width: 600px) {
-    header h1 {
-        font-size: 2rem;
-    }
-
-    main {
-        width: 94%;
-    }
-
-    .especie {
-        padding: 17px;
-    }
-
-    .cartao {
-        height: 270px;
-    }
-
-    .curiosidade {
-        padding: 18px;
-        font-size: 0.92rem;
-    }
-}
-
-/* RESPEITA A PREFERÊNCIA POR MENOS ANIMAÇÕES */
+/* Respeita a preferência por menos animações */
 
 @media (prefers-reduced-motion: reduce) {
     *,
@@ -315,4 +236,3 @@ footer a:hover {
         scroll-behavior: auto !important;
         transition: none !important;
     }
-}
