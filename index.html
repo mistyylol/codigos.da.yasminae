@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -8,216 +7,203 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="cabecalho">
+
+    <header>
         <h1>Mariposas</h1>
         <p>Curiosidades sobre algumas espécies interessantes!</p>
-        <p class="instrucao">
-            🦋 Passe o mouse ou toque nas imagens para descobrir
-            curiosidades sobre cada espécie.
-        </p>
+        <p class="dica">🦋 Passe o mouse sobre as imagens para descobrir curiosidades!</p>
     </header>
 
     <main>
+
+        <!-- MARIPOSA LUNA -->
         <section class="especie">
             <h2>Mariposa Luna</h2>
 
-            <div class="moth-card">
-                <img
-                    class="biscoito"
-                    src="images.jpeg"
-                    alt="Mariposa Luna com asas verdes e longas caudas"
-                    tabindex="0"
-                    aria-describedby="curiosidade-luna"
-                >
-                <div class="curiosidade" id="curiosidade-luna">
+            <details class="cartao">
+                <summary>
+                    <img src="images.jpeg" alt="Mariposa Luna">
+                    <span class="indicacao">Passe o mouse ou toque para descobrir!</span>
+                </summary>
+
+                <div class="curiosidade">
                     <h3>🌙 Você sabia?</h3>
                     <p>
-                        A mariposa Luna adulta não se alimenta:
-                        suas peças bucais são vestigiais. Os machos
-                        conseguem localizar as fêmeas pelas
-                        substâncias químicas chamadas feromônios.
+                        A mariposa Luna adulta não se alimenta.
+                        Ela utiliza a energia que acumulou quando
+                        era lagarta. Suas grandes caudas nas asas
+                        também podem atrapalhar a localização do
+                        inseto pelos morcegos.
                     </p>
                 </div>
-            </div>
+            </details>
 
             <p>
-                A mariposa Luna é uma das espécies de insetos
-                noturnos mais bonitas da América do Norte. Sua fase
-                adulta dura poucos dias, geralmente cerca de uma
-                semana, e ela não se alimenta nessa etapa, utilizando
-                as reservas acumuladas durante a fase de lagarta.
+                A mariposa Luna é uma espécie noturna encontrada
+                na América do Norte. Sua fase adulta dura poucos
+                dias, e ela não se alimenta nessa etapa.
             </p>
 
             <h3>Origem do nome</h3>
             <p>
-                O nome "Luna" faz referência às marcas arredondadas,
-                semelhantes a luas, presentes em suas asas.
+                O nome Luna faz referência às marcas arredondadas
+                que lembram pequenas luas presentes nas asas.
             </p>
 
             <h3>Fase lagarta</h3>
             <p>
-                Diferentemente da fase adulta, a lagarta da mariposa
-                Luna se alimenta ativamente de folhas de árvores
-                hospedeiras para crescer e acumular energia.
+                Na fase de lagarta, a mariposa Luna se alimenta
+                de folhas de árvores hospedeiras para crescer
+                e acumular energia.
             </p>
         </section>
 
+        <!-- MARIPOSA ATLAS -->
         <section class="especie">
             <h2>Mariposa Atlas</h2>
 
-            <div class="moth-card">
-                <img
-                    src="atlas.jpg"
-                    alt="Mariposa Atlas com asas grandes e padrões marrons"
-                    tabindex="0"
-                    aria-describedby="curiosidade-atlas"
-                >
-                <div class="curiosidade" id="curiosidade-atlas">
+            <details class="cartao">
+                <summary>
+                    <img src="atlas.jpg" alt="Mariposa Atlas">
+                    <span class="indicacao">Passe o mouse ou toque para descobrir!</span>
+                </summary>
+
+                <div class="curiosidade">
                     <h3>🐍 Uma defesa surpreendente!</h3>
                     <p>
-                        As pontas das asas lembram cabeças de cobra.
-                        Quando ameaçada, a mariposa pode movimentar
-                        as asas para reforçar essa semelhança e
-                        assustar possíveis predadores.
+                        As pontas das asas da mariposa Atlas
+                        lembram cabeças de cobra. Essa semelhança
+                        pode ajudar a confundir ou assustar
+                        predadores quando a mariposa está ameaçada.
                     </p>
                 </div>
-            </div>
+            </details>
 
             <p>
                 A mariposa Atlas (Attacus atlas) é uma das maiores
-                mariposas do mundo. Sua envergadura pode chegar a
-                aproximadamente 30 cm, e sua área total de asas é
-                impressionante.
+                mariposas do mundo, podendo alcançar cerca de
+                30 cm de envergadura.
             </p>
 
             <h3>Método de defesa</h3>
             <p>
-                As pontas das asas da mariposa Atlas lembram a cabeça
-                de uma cobra. Quando se sente ameaçada, ela pode
-                movimentar as asas e até cair no chão, movimentos
-                que podem ajudar a confundir ou assustar predadores.
-                Essa explicação é considerada uma hipótese de defesa
-                por imitação.
+                Os desenhos nas pontas das asas lembram cabeças
+                de cobra. Quando ameaçada, a mariposa pode
+                movimentar as asas para reforçar essa aparência.
             </p>
         </section>
 
+        <!-- BRUXA-BRANCA -->
         <section class="especie">
             <h2>Mariposa-Bruxa-Branca</h2>
 
-            <div class="moth-card">
-                <img
-                    src="branca.jpg"
-                    alt="Mariposa-bruxa-branca com asas largas e desenhos acinzentados"
-                    tabindex="0"
-                    aria-describedby="curiosidade-branca"
-                >
-                <div class="curiosidade" id="curiosidade-branca">
-                    <h3>📏 Uma gigante das asas!</h3>
+            <details class="cartao">
+                <summary>
+                    <img src="branca.jpg" alt="Mariposa-bruxa-branca">
+                    <span class="indicacao">Passe o mouse ou toque para descobrir!</span>
+                </summary>
+
+                <div class="curiosidade">
+                    <h3>📏 Asas gigantes!</h3>
                     <p>
-                        A bruxa-branca (Thysania agrippina) tem o
-                        recorde documentado de maior envergadura
-                        entre mariposas: um exemplar registrado
-                        alcançou 30,8 cm.
+                        A bruxa-branca (Thysania agrippina)
+                        é conhecida por sua enorme envergadura.
+                        Há registros de exemplares com cerca
+                        de 30,8 cm de ponta a ponta das asas.
                     </p>
                 </div>
-            </div>
+            </details>
 
             <p>
-                A bruxa-branca (Thysania agrippina) é famosa por sua
-                enorme envergadura, que geralmente pode chegar a
-                cerca de 28 cm, embora existam registros de
-                exemplares maiores.
+                A bruxa-branca (Thysania agrippina) é uma
+                mariposa famosa por suas asas largas e pelos
+                padrões em tons de cinza e marrom.
             </p>
 
             <h3>Audição contra morcegos</h3>
             <p>
-                Algumas mariposas possuem órgãos auditivos capazes
-                de detectar os ultrassons emitidos por morcegos.
-                Essa capacidade ajuda certas espécies a perceber
-                a aproximação desses predadores. Para a
-                bruxa-branca especificamente, essa característica
-                precisa de confirmação antes de ser afirmada.
+                Algumas espécies de mariposas conseguem detectar
+                os ultrassons emitidos por morcegos. A capacidade
+                específica da bruxa-branca precisa de confirmação
+                antes de ser afirmada como característica dela.
             </p>
 
             <h3>Camuflagem</h3>
             <p>
-                Suas asas apresentam tons claros e linhas
-                acinzentadas e marrons. Esse padrão pode ajudá-la
-                a se confundir com líquens e marcas presentes
-                nos troncos das árvores quando permanece pousada.
+                Seus padrões claros e escuros podem ajudar a
+                quebrar o contorno das asas quando ela está
+                pousada sobre superfícies semelhantes.
             </p>
         </section>
 
+        <!-- MARIPOSA-DO-MAPLE-ROSADA -->
         <section class="especie">
             <h2>Mariposa-do-Maple-Rosada</h2>
 
-            <div class="moth-card">
-                <img
-                    src="Maple.jpg"
-                    alt="Mariposa-do-maple-rosada com asas rosas e amarelas"
-                    tabindex="0"
-                    aria-describedby="curiosidade-maple"
-                >
-                <div class="curiosidade" id="curiosidade-maple">
-                    <h3>🌸 Cores que chamam atenção!</h3>
+            <details class="cartao">
+                <summary>
+                    <img src="Maple.jpg" alt="Mariposa-do-maple-rosada">
+                    <span class="indicacao">Passe o mouse ou toque para descobrir!</span>
+                </summary>
+
+                <div class="curiosidade">
+                    <h3>🌸 Rosa e amarelo!</h3>
                     <p>
-                        A mariposa-rosada-do-bordo (Dryocampa
-                        rubicunda) apresenta tons de rosa e amarelo.
-                        Suas lagartas se alimentam principalmente
+                        A mariposa-rosada-do-bordo
+                        (Dryocampa rubicunda) é conhecida
+                        pelas cores rosa e amarelo. Suas
+                        lagartas alimentam-se principalmente
                         de folhas de árvores do gênero Acer,
                         conhecidas como bordos ou maples.
                     </p>
                 </div>
-            </div>
+            </details>
 
             <p>
                 A mariposa-rosada-do-bordo (Dryocampa rubicunda)
-                é uma pequena espécie norte-americana conhecida
-                pela coloração rosa e amarela e pelo corpo
-                coberto de pelos.
+                é uma pequena espécie norte-americana com
+                coloração rosa e amarela e corpo peludo.
             </p>
 
-            <h3>Camuflagem e coloração</h3>
+            <h3>Camuflagem</h3>
             <p>
-                A coloração marcante torna essa espécie facilmente
-                reconhecível. Ela está associada à comunicação
-                visual e pode servir como sinal de alerta para
-                possíveis predadores, não sendo correto afirmar
-                que sua principal função é a camuflagem.
+                Sua coloração marcante torna a espécie
+                facilmente reconhecível. Não é possível afirmar
+                que essas cores servem principalmente para
+                camuflagem em todos os ambientes.
             </p>
 
             <h3>Sua pelugem</h3>
             <p>
-                Os pelos do corpo ajudam a perceber estímulos
-                táteis e a direção do vento durante o voo.
-                Não há confirmação suficiente para afirmar que
-                funcionam como ímãs que espalham pólen de forma
-                muito eficiente.
+                O corpo possui pelos que fazem parte de sua
+                estrutura externa. Não há confirmação suficiente
+                para afirmar que funcionam como ímãs para
+                espalhar pólen eficientemente.
             </p>
 
             <h3>Lagartas</h3>
             <p>
-                A lagarta, conhecida em inglês como green-striped
-                mapleworm, pode apresentar corpo esverdeado,
-                listras longitudinais e projeções escuras próximas
-                à cabeça. Ela se alimenta de folhas, principalmente
-                de árvores do gênero Acer.
+                As lagartas podem apresentar corpo esverdeado,
+                listras e projeções próximas à cabeça. Elas
+                alimentam-se de folhas de árvores hospedeiras.
             </p>
         </section>
+
     </main>
 
     <footer>
-        <p>Saiba mais sobre os lepidópteros:</p>
+        <p>Saiba mais sobre as mariposas:</p>
+
         <a href="https://www3.unicentro.br/museuinterativo/lepidoptera/"
            target="_blank" rel="noopener noreferrer">
             Ordem Lepidoptera
         </a>
+
         <a href="https://parqueecologicoimigrantes.org.br/mariposas-as-damas-da-noite/"
            target="_blank" rel="noopener noreferrer">
             Damas da noite
         </a>
     </footer>
 
-    <script src="script.js"></script>
 </body>
 </html>
