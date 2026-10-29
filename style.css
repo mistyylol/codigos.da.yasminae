@@ -458,3 +458,48 @@ footer a:hover {
         transition: none !important;
     }
 }
+
+.introducao {
+    position: relative;
+    margin: 0 0 48px;
+    padding: 30px 35px 28px;
+
+    background: #e8e7d3;
+    border: 1px dashed #a5a687;
+    transform: rotate(-0.4deg);
+}
+
+.introducao-etiqueta {
+    color: #786344;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.introducao h2 {
+    margin: 12px 0;
+    color: #465a3b;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    line-height: 1.3;
+}
+
+.introducao p {
+    max-width: 760px;
+    margin-bottom: 15px;
+}
+
+.assinatura {
+    display: block;
+    color: #806b4c;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 600px) {
+    .introducao {
+        padding: 23px 20px;
+        margin-bottom: 35px;
+    }
+}
