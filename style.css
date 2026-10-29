@@ -1,505 +1,104 @@
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Patrick+Hand&display=swap');
 
-* {
-    box-sizing: border-box;
-}
+/* MENU INTERATIVO DAS MARIPOSAS */
 
-html {
-    scroll-behavior: smooth;
-}
-
-:root {
-    --folha: #465a3b;
-    --musgo: #687653;
-    --verde-claro: #a7ad83;
-    --terra: #a56f51;
-    --papel: #f5efdf;
-    --papel-claro: #fffaf0;
-    --tinta: #393b2b;
-    --linha: #d8cfb8;
-}
-
-body {
-    margin: 0;
-    font-family: 'DM Sans', sans-serif;
-    color: var(--tinta);
-    line-height: 1.85;
-    background-color: var(--papel);
-
-    background-image:
-        radial-gradient(ellipse at 10% 20%,
-            rgba(130, 143, 95, 0.10), transparent 32%),
-        radial-gradient(ellipse at 90% 70%,
-            rgba(165, 111, 81, 0.08), transparent 30%);
-}
-
-/* CABEÇALHO */
-
-header {
-    position: relative;
-    overflow: hidden;
-    text-align: center;
-    padding: 65px 20px 55px;
-    color: #f9f2df;
-
-    background:
-        linear-gradient(115deg,
-            rgba(35, 52, 34, 0.96),
-            rgba(77, 94, 59, 0.91)),
-        #465a3b;
-
-    border-bottom: 7px solid #b3a078;
-}
-
-header::before,
-header::after {
-    position: absolute;
-    color: rgba(239, 231, 200, 0.13);
-    font-size: 125px;
-    line-height: 1;
-    pointer-events: none;
-}
-
-header::before {
-    content: "❧";
-    left: 4%;
-    top: 15px;
-    transform: rotate(-25deg);
-}
-
-header::after {
-    content: "❧";
-    right: 4%;
-    bottom: -15px;
-    transform: rotate(155deg);
-}
-
-header h1 {
-    position: relative;
-    margin: 0;
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: clamp(3rem, 7vw, 5rem);
-    font-weight: 600;
-    letter-spacing: 1px;
-    line-height: 1.2;
-}
-
-header > p:not(.dica) {
-    margin: 15px auto 20px;
-    font-size: 1.08rem;
-    color: #e4e4cc;
-}
-
-.dica {
+.menu-mariposa {
     display: inline-block;
-    margin: 10px 0 0;
-    padding: 7px 17px;
-    border: 1px solid rgba(245, 239, 223, 0.32);
-    border-radius: 3px;
-    color: #f5e8c9;
-    font-family: 'Patrick Hand', cursive;
-    font-size: 1.08rem;
-    letter-spacing: 0.3px;
-}
-
-/* CONTEÚDO */
-
-main {
-    width: min(1100px, 91%);
-    margin: 55px auto 70px;
-}
-
-/* CADA ESPÉCIE PARECE UMA PÁGINA DE UM CADERNO */
-
-.especie {
     position: relative;
-    margin: 0 0 55px;
-    padding: 32px 38px 38px;
+    width: 280px;
+    margin: 15px 0 25px;
+    vertical-align: top;
+    background-color: #e7eadb;
+    border: 2px solid #78866b;
+    border-radius: 12px;
     overflow: hidden;
-
-    background: rgba(255, 250, 240, 0.87);
-    border: 1px solid var(--linha);
-    border-left: 5px solid var(--musgo);
-
-    box-shadow:
-        4px 5px 0 rgba(108, 102, 75, 0.07),
-        0 12px 30px rgba(57, 59, 43, 0.06);
+    box-shadow: 3px 4px 0 #c4cbb5;
 }
 
-/* Pequeno detalhe de folha no canto */
+/* Imagem clicável */
 
-.especie::after {
-    content: "✳";
-    position: absolute;
-    top: 12px;
-    right: 20px;
-    color: #a7ad83;
-    font-size: 28px;
-    opacity: 0.65;
-    pointer-events: none;
-}
-
-.especie h2 {
-    display: flex;
-    align-items: center;
-    gap: 13px;
-
-    margin: 0 0 20px;
-    padding: 0 35px 13px 0;
-
-    color: var(--folha);
-    border-bottom: 1px dashed #c8c6a8;
-
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: clamp(1.65rem, 3vw, 2.15rem);
-    font-weight: 600;
-    line-height: 1.4;
-}
-
-.especie h2::before {
-    content: "❧";
-    color: var(--terra);
-    font-family: Georgia, serif;
-    font-size: 1.6rem;
-}
-
-.especie h3 {
-    margin: 28px 0 6px;
-    color: #765b3d;
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1.3rem;
-    font-weight: 600;
-}
-
-.especie p {
-    margin: 0 0 17px;
-    font-size: 0.98rem;
-}
-
-.especie > p {
-    max-width: 780px;
-}
-
-/* IMAGEM E CURIOSIDADE */
-
-.cartao {
-    position: relative;
-    width: min(100%, 650px);
-    height: 390px;
-    margin: 28px auto 32px;
-    overflow: hidden;
-
-    background: #e3dfc9;
-    border: 8px solid #fffdf5;
-    outline: 1px solid #c9c1a8;
-
-    box-shadow:
-        0 4px 8px rgba(57, 59, 43, 0.12),
-        5px 7px 0 rgba(120, 111, 82, 0.10);
-}
-
-.cartao summary {
-    position: relative;
-    width: 100%;
-    height: 100%;
+.menu-mariposa summary {
     list-style: none;
     cursor: pointer;
+    text-align: center;
+    padding: 10px;
 }
 
-.cartao summary::-webkit-details-marker {
+.menu-mariposa summary::-webkit-details-marker {
     display: none;
 }
 
-.cartao summary img {
+.menu-mariposa summary img {
     display: block;
     width: 100%;
-    height: 100%;
-    padding: 6px;
+    height: 190px;
     object-fit: contain;
-
-    transition:
-        transform 0.55s ease,
-        opacity 0.4s ease,
-        filter 0.4s ease;
+    background-color: #f5f3e9;
+    border-radius: 7px;
+    transition: transform 0.3s ease;
 }
 
-/* Etiqueta com aparência de anotação */
-
-.indicacao {
-    position: absolute;
-    left: 50%;
-    bottom: 13px;
-    transform: translateX(-50%);
-    width: max-content;
-    max-width: 92%;
-
-    padding: 6px 15px;
-    color: #fff9e9;
-    background: rgba(54, 65, 43, 0.92);
-
-    border: 1px solid rgba(255, 250, 240, 0.45);
-    border-radius: 2px;
-
-    font-family: 'Patrick Hand', cursive;
-    font-size: 1.05rem;
-    text-align: center;
-
-    transition: opacity 0.3s ease;
+.menu-mariposa summary:hover img {
+    transform: scale(1.04);
 }
 
-/* CAMADA DAS CURIOSIDADES */
-
-.curiosidade {
-    position: absolute;
-    inset: 0;
-    z-index: 2;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    overflow-y: auto;
-
-    padding: 30px;
-    color: #f8f1de;
-
-    background:
-        linear-gradient(
-            140deg,
-            rgba(51, 68, 43, 0.97),
-            rgba(91, 98, 66, 0.97)
-        );
-
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(12px);
-
-    transition:
-        opacity 0.35s ease,
-        transform 0.35s ease,
-        visibility 0.35s ease;
-
-    pointer-events: none;
-}
-
-.curiosidade::before {
-    content: "ANOTAÇÃO DE CAMPO";
+.menu-mariposa summary span {
     display: block;
-    margin-bottom: 12px;
-    color: #d8c99d;
+    padding: 10px 4px 3px;
+    color: #43533a;
+    font-weight: bold;
+}
 
-    font-family: 'Patrick Hand', cursive;
+/* Informações que aparecem ao clicar */
+
+.info-mariposa {
+    padding: 16px;
+    background-color: #f7f4e9;
+    border-top: 2px dashed #a7b194;
+    animation: aparecer 0.3s ease;
+}
+
+.info-mariposa h3 {
+    margin-top: 0;
+    color: #526b43;
+}
+
+.info-mariposa p {
     font-size: 0.95rem;
-    letter-spacing: 2px;
+    line-height: 1.6;
+    color: #45483b;
 }
 
-.curiosidade h3 {
-    margin: 0 0 12px;
-    color: #eee0b9;
-    font-size: 1.65rem;
+.menu-mariposa[open] {
+    background-color: #dfe6d3;
 }
 
-.curiosidade p {
-    margin: 0;
-    font-size: 0.97rem;
-    line-height: 1.85;
-}
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
 
-/* EFEITO PARA QUEM USA MOUSE */
-
-@media (hover: hover) {
-    .cartao:hover .curiosidade {
+    to {
         opacity: 1;
-        visibility: visible;
         transform: translateY(0);
     }
-
-    .cartao:hover summary img {
-        transform: scale(1.035);
-        opacity: 0.2;
-        filter: sepia(0.25);
-    }
-
-    .cartao:hover .indicacao {
-        opacity: 0;
-    }
 }
 
-/* EFEITO PARA CELULAR E CLIQUE */
-
-.cartao[open] .curiosidade {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-    pointer-events: auto;
-}
-
-.cartao[open] summary img {
-    opacity: 0.2;
-}
-
-.cartao[open] .indicacao {
-    opacity: 0;
-}
-
-.cartao summary:focus-visible {
-    outline: 3px solid #d3bc81;
-    outline-offset: -5px;
-}
-
-/* RODAPÉ */
-
-footer {
-    position: relative;
-    padding: 38px 20px 32px;
-    text-align: center;
-
-    color: #f5efdf;
-    background: #354631;
-    border-top: 7px solid #b3a078;
-}
-
-footer p {
-    margin: 0 0 12px;
-    color: #e6dfc9;
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1.25rem;
-}
-
-footer a {
-    display: inline-block;
-    margin: 7px 5px;
-    padding: 7px 14px;
-
-    color: #f1dfb5;
-    border-bottom: 1px solid #899574;
-
-    text-decoration: none;
-    transition:
-        color 0.25s ease,
-        background 0.25s ease;
-}
-
-footer a:hover {
-    color: #fffdf3;
-    background: rgba(255, 255, 255, 0.08);
-}
-
-/* TELAS MENORES */
+/* Ajuste para celulares */
 
 @media (max-width: 600px) {
-    header {
-        padding: 48px 17px 40px;
-    }
-
-    header::before,
-    header::after {
-        font-size: 75px;
-    }
-
-    header h1 {
-        font-size: 3rem;
-    }
-
-    header > p:not(.dica) {
-        font-size: 0.98rem;
-    }
-
-    main {
-        width: 93%;
-        margin: 32px auto 45px;
-    }
-
-    .especie {
-        padding: 23px 18px 26px;
-        margin-bottom: 35px;
-        border-left-width: 4px;
-    }
-
-    .especie h2 {
-        font-size: 1.65rem;
-    }
-
-    .especie h3 {
-        font-size: 1.2rem;
-    }
-
-    .cartao {
-        height: 285px;
-        margin: 23px auto 28px;
-        border-width: 5px;
-    }
-
-    .curiosidade {
-        padding: 20px;
-    }
-
-    .curiosidade h3 {
-        font-size: 1.35rem;
-    }
-
-    .curiosidade p {
-        font-size: 0.91rem;
-        line-height: 1.7;
-    }
-
-    .indicacao {
-        font-size: 0.94rem;
+    .menu-mariposa {
+        display: block;
+        width: min(100%, 340px);
+        margin: 20px auto;
     }
 }
-
-/* ACESSIBILIDADE */
 
 @media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        scroll-behavior: auto !important;
+    .menu-mariposa *,
+    .menu-mariposa {
+        animation: none !important;
         transition: none !important;
-    }
-}
-
-.introducao {
-    position: relative;
-    margin: 0 0 48px;
-    padding: 30px 35px 28px;
-
-    background: #e8e7d3;
-    border: 1px dashed #a5a687;
-    transform: rotate(-0.4deg);
-}
-
-.introducao-etiqueta {
-    color: #786344;
-    font-family: 'Patrick Hand', cursive;
-    font-size: 1rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
-
-.introducao h2 {
-    margin: 12px 0;
-    color: #465a3b;
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: clamp(1.8rem, 4vw, 2.5rem);
-    line-height: 1.3;
-}
-
-.introducao p {
-    max-width: 760px;
-    margin-bottom: 15px;
-}
-
-.assinatura {
-    display: block;
-    color: #806b4c;
-    font-family: 'Patrick Hand', cursive;
-    font-size: 1.1rem;
-}
-
-@media (max-width: 600px) {
-    .introducao {
-        padding: 23px 20px;
-        margin-bottom: 35px;
     }
 }
