@@ -1,4 +1,7 @@
-{
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Patrick+Hand&display=swap');
+
+* {
     box-sizing: border-box;
 }
 
@@ -6,68 +9,195 @@ html {
     scroll-behavior: smooth;
 }
 
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f2eadf;
-    color: #3e3329;
-    line-height: 1.7;
+:root {
+    --folha: #465a3b;
+    --musgo: #687653;
+    --verde-claro: #a7ad83;
+    --terra: #a56f51;
+    --papel: #f5efdf;
+    --papel-claro: #fffaf0;
+    --tinta: #393b2b;
+    --linha: #d8cfb8;
 }
 
+body {
+    margin: 0;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--tinta);
+    line-height: 1.85;
+    background-color: var(--papel);
+
+    background-image:
+        radial-gradient(ellipse at 10% 20%,
+            rgba(130, 143, 95, 0.10), transparent 32%),
+        radial-gradient(ellipse at 90% 70%,
+            rgba(165, 111, 81, 0.08), transparent 30%);
+}
+
+/* CABEÇALHO */
+
 header {
+    position: relative;
+    overflow: hidden;
     text-align: center;
-    padding: 35px 20px;
-    color: #fff8ed;
-    background: linear-gradient(135deg, #574333, #92775b);
+    padding: 65px 20px 55px;
+    color: #f9f2df;
+
+    background:
+        linear-gradient(115deg,
+            rgba(35, 52, 34, 0.96),
+            rgba(77, 94, 59, 0.91)),
+        #465a3b;
+
+    border-bottom: 7px solid #b3a078;
+}
+
+header::before,
+header::after {
+    position: absolute;
+    color: rgba(239, 231, 200, 0.13);
+    font-size: 125px;
+    line-height: 1;
+    pointer-events: none;
+}
+
+header::before {
+    content: "❧";
+    left: 4%;
+    top: 15px;
+    transform: rotate(-25deg);
+}
+
+header::after {
+    content: "❧";
+    right: 4%;
+    bottom: -15px;
+    transform: rotate(155deg);
 }
 
 header h1 {
+    position: relative;
     margin: 0;
-    font-size: 2.6rem;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(3rem, 7vw, 5rem);
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 1.2;
+}
+
+header > p:not(.dica) {
+    margin: 15px auto 20px;
+    font-size: 1.08rem;
+    color: #e4e4cc;
 }
 
 .dica {
-    font-size: 0.95rem;
+    display: inline-block;
+    margin: 10px 0 0;
+    padding: 7px 17px;
+    border: 1px solid rgba(245, 239, 223, 0.32);
+    border-radius: 3px;
+    color: #f5e8c9;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.08rem;
+    letter-spacing: 0.3px;
 }
+
+/* CONTEÚDO */
 
 main {
-    width: 90%;
-    max-width: 900px;
-    margin: 30px auto;
+    width: min(1100px, 91%);
+    margin: 55px auto 70px;
 }
 
+/* CADA ESPÉCIE PARECE UMA PÁGINA DE UM CADERNO */
+
 .especie {
-    background: #fffaf2;
-    padding: 25px;
-    margin-bottom: 30px;
-    border-radius: 16px;
-    box-shadow: 0 5px 18px rgba(62, 51, 41, 0.10);
+    position: relative;
+    margin: 0 0 55px;
+    padding: 32px 38px 38px;
+    overflow: hidden;
+
+    background: rgba(255, 250, 240, 0.87);
+    border: 1px solid var(--linha);
+    border-left: 5px solid var(--musgo);
+
+    box-shadow:
+        4px 5px 0 rgba(108, 102, 75, 0.07),
+        0 12px 30px rgba(57, 59, 43, 0.06);
+}
+
+/* Pequeno detalhe de folha no canto */
+
+.especie::after {
+    content: "✳";
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    color: #a7ad83;
+    font-size: 28px;
+    opacity: 0.65;
+    pointer-events: none;
 }
 
 .especie h2 {
-    color: #79583e;
-    margin-top: 0;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    margin: 0 0 20px;
+    padding: 0 35px 13px 0;
+
+    color: var(--folha);
+    border-bottom: 1px dashed #c8c6a8;
+
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(1.65rem, 3vw, 2.15rem);
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.especie h2::before {
+    content: "❧";
+    color: var(--terra);
+    font-family: Georgia, serif;
+    font-size: 1.6rem;
 }
 
 .especie h3 {
-    color: #826747;
-    margin-bottom: 5px;
+    margin: 28px 0 6px;
+    color: #765b3d;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.3rem;
+    font-weight: 600;
 }
 
-/* CARTÃO INTERATIVO */
+.especie p {
+    margin: 0 0 17px;
+    font-size: 0.98rem;
+}
+
+.especie > p {
+    max-width: 780px;
+}
+
+/* IMAGEM E CURIOSIDADE */
 
 .cartao {
     position: relative;
-    width: 100%;
-    max-width: 520px;
-    height: 320px;
-    margin: 20px auto;
+    width: min(100%, 650px);
+    height: 390px;
+    margin: 28px auto 32px;
     overflow: hidden;
-    border-radius: 14px;
-    background: #574333;
-}
 
-/* Remove o marcador padrão do details */
+    background: #e3dfc9;
+    border: 8px solid #fffdf5;
+    outline: 1px solid #c9c1a8;
+
+    box-shadow:
+        0 4px 8px rgba(57, 59, 43, 0.12),
+        5px 7px 0 rgba(120, 111, 82, 0.10);
+}
 
 .cartao summary {
     position: relative;
@@ -85,45 +215,64 @@ main {
     display: block;
     width: 100%;
     height: 100%;
+    padding: 6px;
     object-fit: contain;
-    padding: 8px;
-    transition: transform 0.4s ease, opacity 0.4s ease;
+
+    transition:
+        transform 0.55s ease,
+        opacity 0.4s ease,
+        filter 0.4s ease;
 }
 
-/* Texto de orientação sobre a imagem */
+/* Etiqueta com aparência de anotação */
 
 .indicacao {
     position: absolute;
-    bottom: 12px;
     left: 50%;
-    width: max-content;
-    max-width: 90%;
+    bottom: 13px;
     transform: translateX(-50%);
-    padding: 7px 12px;
-    border-radius: 20px;
-    color: #fffaf2;
-    background: rgba(62, 51, 41, 0.88);
-    font-size: 0.82rem;
+    width: max-content;
+    max-width: 92%;
+
+    padding: 6px 15px;
+    color: #fff9e9;
+    background: rgba(54, 65, 43, 0.92);
+
+    border: 1px solid rgba(255, 250, 240, 0.45);
+    border-radius: 2px;
+
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.05rem;
     text-align: center;
+
+    transition: opacity 0.3s ease;
 }
 
-/* Camada da curiosidade */
+/* CAMADA DAS CURIOSIDADES */
 
 .curiosidade {
     position: absolute;
     inset: 0;
     z-index: 2;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     overflow-y: auto;
-    padding: 25px;
-    color: #fffaf2;
-    background: rgba(62, 51, 41, 0.96);
+
+    padding: 30px;
+    color: #f8f1de;
+
+    background:
+        linear-gradient(
+            140deg,
+            rgba(51, 68, 43, 0.97),
+            rgba(91, 98, 66, 0.97)
+        );
 
     opacity: 0;
     visibility: hidden;
-    transform: translateY(15px);
+    transform: translateY(12px);
 
     transition:
         opacity 0.35s ease,
@@ -133,13 +282,30 @@ main {
     pointer-events: none;
 }
 
-.curiosidade h3 {
-    color: #dfc49e;
-    font-size: 1.35rem;
-    margin-top: 0;
+.curiosidade::before {
+    content: "ANOTAÇÃO DE CAMPO";
+    display: block;
+    margin-bottom: 12px;
+    color: #d8c99d;
+
+    font-family: 'Patrick Hand', cursive;
+    font-size: 0.95rem;
+    letter-spacing: 2px;
 }
 
-/* Interação ao passar o mouse */
+.curiosidade h3 {
+    margin: 0 0 12px;
+    color: #eee0b9;
+    font-size: 1.65rem;
+}
+
+.curiosidade p {
+    margin: 0;
+    font-size: 0.97rem;
+    line-height: 1.85;
+}
+
+/* EFEITO PARA QUEM USA MOUSE */
 
 @media (hover: hover) {
     .cartao:hover .curiosidade {
@@ -149,8 +315,9 @@ main {
     }
 
     .cartao:hover summary img {
-        transform: scale(1.08);
-        opacity: 0.3;
+        transform: scale(1.035);
+        opacity: 0.2;
+        filter: sepia(0.25);
     }
 
     .cartao:hover .indicacao {
@@ -158,7 +325,7 @@ main {
     }
 }
 
-/* Interação por toque e clique */
+/* EFEITO PARA CELULAR E CLIQUE */
 
 .cartao[open] .curiosidade {
     opacity: 1;
@@ -168,66 +335,120 @@ main {
 }
 
 .cartao[open] summary img {
-    opacity: 0.25;
+    opacity: 0.2;
 }
 
 .cartao[open] .indicacao {
     opacity: 0;
 }
 
-/* Foco acessível pelo teclado */
-
 .cartao summary:focus-visible {
-    outline: 4px solid #b79a70;
-    outline-offset: -4px;
+    outline: 3px solid #d3bc81;
+    outline-offset: -5px;
 }
 
-/* Rodapé */
+/* RODAPÉ */
 
 footer {
+    position: relative;
+    padding: 38px 20px 32px;
     text-align: center;
-    padding: 25px;
-    background: #3e3329;
-    color: #fffaf2;
+
+    color: #f5efdf;
+    background: #354631;
+    border-top: 7px solid #b3a078;
+}
+
+footer p {
+    margin: 0 0 12px;
+    color: #e6dfc9;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.25rem;
 }
 
 footer a {
     display: inline-block;
-    margin: 5px 10px;
-    color: #e4cfad;
+    margin: 7px 5px;
+    padding: 7px 14px;
+
+    color: #f1dfb5;
+    border-bottom: 1px solid #899574;
+
     text-decoration: none;
+    transition:
+        color 0.25s ease,
+        background 0.25s ease;
 }
 
 footer a:hover {
-    text-decoration: underline;
+    color: #fffdf3;
+    background: rgba(255, 255, 255, 0.08);
 }
 
-/* Ajustes para celulares */
+/* TELAS MENORES */
 
 @media (max-width: 600px) {
+    header {
+        padding: 48px 17px 40px;
+    }
+
+    header::before,
+    header::after {
+        font-size: 75px;
+    }
+
     header h1 {
-        font-size: 2rem;
+        font-size: 3rem;
+    }
+
+    header > p:not(.dica) {
+        font-size: 0.98rem;
     }
 
     main {
-        width: 94%;
+        width: 93%;
+        margin: 32px auto 45px;
     }
 
     .especie {
-        padding: 17px;
+        padding: 23px 18px 26px;
+        margin-bottom: 35px;
+        border-left-width: 4px;
+    }
+
+    .especie h2 {
+        font-size: 1.65rem;
+    }
+
+    .especie h3 {
+        font-size: 1.2rem;
     }
 
     .cartao {
-        height: 270px;
+        height: 285px;
+        margin: 23px auto 28px;
+        border-width: 5px;
     }
 
     .curiosidade {
-        padding: 18px;
-        font-size: 0.92rem;
+        padding: 20px;
+    }
+
+    .curiosidade h3 {
+        font-size: 1.35rem;
+    }
+
+    .curiosidade p {
+        font-size: 0.91rem;
+        line-height: 1.7;
+    }
+
+    .indicacao {
+        font-size: 0.94rem;
     }
 }
 
-/* Respeita a preferência por menos animações */
+/* ACESSIBILIDADE */
 
 @media (prefers-reduced-motion: reduce) {
     *,
@@ -236,3 +457,4 @@ footer a:hover {
         scroll-behavior: auto !important;
         transition: none !important;
     }
+}
