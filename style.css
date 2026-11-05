@@ -102,3 +102,13 @@
         transition: none !important;
     }
 }
+/* TODAS AS IMAGENS DO SITE COM O MESMO TAMANHO */
+
+img {
+    width: 280px;
+    height: 190px;
+    object-fit: contain;
+    background-color: #FBEFC4;
+    border-radius: 7px;
+    display: block;
+}
