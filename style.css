@@ -112,3 +112,10 @@ img {
     border-radius: 7px;
     display: block;
 }
+}
+h1{
+    color: #2f4f45;
+    font-weight: bold;
+}
+h2{
+    color: rgb(65, 37, 25);
